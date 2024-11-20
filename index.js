@@ -12,7 +12,6 @@ const freelancers = [
   const Name = ["Dr. Slice", "Dr. Pressure", "Prof. Possibility", "Prof. Prism","Dr. Impulse", "Prof. Spark", "Dr. Wire", "Prof. Goose"];
   const Occupation = ["gardener", "programmer", "teacher", "driver"];
 
-
   function render()
   {
     const listOfFreelancers = document.querySelector('#freelancerList');
@@ -23,25 +22,27 @@ const freelancers = [
         const freelancer = freelancers[i];
         const freelancerElement = document.createElement('div');
         freelancerElement.classList.add('freelancerSpaceing');
-        freelancerElement.innerHTML = `<strong>${freelancer.name}</strong> <strong>${freelancer.occupation}</strong>  $${freelancer.startingPrice}`;
+        freelancerElement.innerHTML = `<strong>${freelancer.name}</strong> <strong>${freelancer.occupation}</strong>  $${freelancer.price}`;
         listOfFreelancers.appendChild(freelancerElement);
     }
     averagePrice();
-
-
   }
 
   function radomGenerator()
   {
-        const randomName = Name[Math.floor(Math.random() * Name.length)];
-        const randomOccupation = Occupation[Math.floor(Math.random() * Occupation.length)];
-        const randomPrice = 
+    const randomName = Name[Math.floor(Math.random() * Name.length)];
+    const randomOccupation = Occupation[Math.floor(Math.random() * Occupation.length)];
+    const randomPrice = Math.floor(Math.random() * 100) + 20;
+
+    return {name: randomName, occupation: randomOccupation, price: randomPrice };
   }
 
 
   function addfreelancers()
   {
-       
+    const nextFreelancer = radomGenerator();
+    freelancers.push(nextFreelancer);
+    render();
   }
 
   function averagePrice()
@@ -55,3 +56,5 @@ const freelancers = [
   }
 
   render();
+
+  setInterval(addfreelancers, 3000);
