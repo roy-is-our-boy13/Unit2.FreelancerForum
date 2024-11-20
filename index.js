@@ -9,24 +9,40 @@ const freelancers = [
     { name: "Prof. Goose", price: 72, occupation: "driver" },
   ];
 
-  const name = ["Dr. Slice", "Dr. Pressure", "Prof. Possibility", "Prof. Prism","Dr. Impulse", "Prof. Spark", "Dr. Wire", "Prof. Goose"];
-  const occupation = ["gardener", "programmer", "teacher", "driver"];
+  const Name = ["Dr. Slice", "Dr. Pressure", "Prof. Possibility", "Prof. Prism","Dr. Impulse", "Prof. Spark", "Dr. Wire", "Prof. Goose"];
+  const Occupation = ["gardener", "programmer", "teacher", "driver"];
 
 
   function render()
   {
+    const listOfFreelancers = document.querySelector('#freelancerList');
+    listOfFreelancers.innerHTML = '';
+
+    for(let i = 0; i < freelancers.length; i++)
+    {
+        const freelancer = freelancers[i];
+        const freelancerElement = document.createElement('div');
+        freelancerElement.classList.add('freelancerSpaceing');
+        freelancerElement.innerHTML = `<strong>${freelancer.name}</strong> <strong>${freelancer.occupation}</strong>  $${freelancer.startingPrice}`;
+        listOfFreelancers.appendChild(freelancerElement);
+    }
+    averagePrice();
 
 
-        averagePrice();
   }
+
+  function radomGenerator()
+  {
+        const randomName = Name[Math.floor(Math.random() * Name.length)];
+        const randomOccupation = Occupation[Math.floor(Math.random() * Occupation.length)];
+        const randomPrice = 
+  }
+
 
   function addfreelancers()
   {
-    const listOfFreelancers = document.querySelector('freelancerList');
-    listOfFreelancers.innerHTML = '';
-
+       
   }
-
 
   function averagePrice()
   {
@@ -34,8 +50,8 @@ const freelancers = [
         freelancers.reduce((accumlator, currentValue) =>
             accumlator + currentValue.price, 0);
     const totalAveragePrice = (theAveragePriceOfFreelancers/freelancers.length);
-    return totalAveragePrice.toFixed(2);
+    document.querySelector('#averagePrice').innerText = `Average Starting Price: $${totalAveragePrice.toFixed(2)}`;
+
   }
 
   render();
-
