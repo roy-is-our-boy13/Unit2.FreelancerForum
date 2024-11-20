@@ -1,0 +1,18 @@
+h1
+{
+    text-align: center;
+}
+body
+{
+    background-color: azure;
+}
+.freelancerList
+{
+    margin-top: 20px;
+}
+.averagePrice
+{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+}
