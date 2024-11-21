@@ -4,35 +4,29 @@ h1
 }
 body
 {
-    background-color: azure;
+    background-color: rgb(216, 229, 208);
 }
 .freelancerList
 {
-    margin-top: 20px;
+    margin-left: -10px;
+    padding: 10px;
+    margin-top: -8px;
 }
 .averagePrice
 {
     text-align: center;
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
-.freelancerSpaceing
+th
 {
-    padding: 10px;
-    margin-bottom: 10px;
+    margin-left: 40px;
+    border: 1px solid black;
+    line-height: 30px;
 }
-.item-a 
+td
 {
-
-    justify-self: start;
-    margin-right: 20px;
-}
-.item-b 
-{
-    justify-self: center;
-}
-.item-c 
-{
-    justify-self: end;
-    margin-left: 80px;
+    height: 30px;
+    border: 1px solid black;
+    line-height: 30px;
 }
